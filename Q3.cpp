@@ -4,9 +4,8 @@ using namespace std;
 void printFrequency(string str)
 {
     map<string, int> M;
-    
     string word = "";
- 
+    str += ' ';
     for (int i = 0; i < str.size(); i++) {
         if (str[i] == ' ') {
             if (M.find(word) == M.end()) {
@@ -25,12 +24,6 @@ void printFrequency(string str)
             word += str[i];
     }
  
-       if (M.find(word) == M.end())
-        M.insert(make_pair(word, 1));
- 
-        else
-        M[word]++;
-        
     cout<<"Word \t    Frequency\n\n";
     
     for (auto& it : M) {
